@@ -894,17 +894,20 @@ const levelOf=tot=>{let L=1;while(L<30&&cumReq(L+1)<=tot)L++;return L;};
 let STUDIO=[];let CARDPERKS={};let UNLOCKMAP={};let SCEN={};let WORLD={};let SPEED={};let FLAGS={};let TROPES=[];
 if(typeof window!=='undefined'&&!window.PROKAT_CONTENT){try{window.PROKAT_CONTENT={
   "meta": {"name":"ПРОКАТ","pack":"perks-v1-FULL","updated":"2026-06-29"},
-  "cfg": {"levelBase":120,"levelPow":1.4,"curveMult":1.2,"maxDev":5,"realize":[0.6,0.68,0.76,0.84,0.92,1],"xpBase":6,"xpStep":7,"intensiveRep":60,"intensiveMoneyBase":80,"intensiveMoneyK":0.5,"startMoney":320,"startStars":5,"energyMax":6,"energyRegenSec":75,"priceGrowth":0.1,"studioQCap":0.2,"payoutMult":1,"repGainMult":1,"priceMult":1,"thresholdMult":1,"cooldownMult":0.25,"repCostMult":1,"flopPenaltyMult":1,"qVariance":0.1,"qVarianceFloor":0.02,"research":{"rushStars":2,"dailyRushCap":6,"eurekaCut":0.4},"flags":{"worldEnabled":true,"qVarianceEnabled":true,"speedEnabled":true,"festivalEnabled":true,"birzhaEnabled":false,"packsEnabled":false,"subEnabled":false,"pvpEnabled":true,"dailyEnabled":true,"techTreeEnabled":false,"studioTreeEnabled":false}},
+  "cfg": {"levelBase":120,"levelPow":1.4,"curveMult":4,"maxDev":5,"realize":[0.6,0.68,0.76,0.84,0.92,1],"xpBase":6,"xpStep":7,"intensiveRep":60,"intensiveMoneyBase":80,"intensiveMoneyK":0.5,"startMoney":320,"startStars":5,"energyMax":6,"energyRegenSec":75,"priceGrowth":0.1,"studioQCap":0.2,"payoutMult":1,"repGainMult":1,"priceMult":1,"thresholdMult":1,"cooldownMult":0.25,"repCostMult":1,"flopPenaltyMult":1,"qVariance":0.1,"qVarianceFloor":0.02,"research":{"rushStars":2,"dailyRushCap":6,"eurekaCut":0.4},"flags":{"worldEnabled":true,"qVarianceEnabled":true,"speedEnabled":true,"festivalEnabled":true,"birzhaEnabled":false,"packsEnabled":true,"subEnabled":true,"pvpEnabled":true,"dailyEnabled":true,"techTreeEnabled":false,"studioTreeEnabled":false,"cardPacksEnabled":true,"mergeEnabled":true,"cardCooldown":true},"endless":{"unlockLevel":17,"futureTech":{"ru":"Технологии Будущего","en":"Future Tech","track":"tech","effect":"freshness","capPerLevel":1,"stepBonus":0.01,"maxBonus":0.1,"costBase":400,"costStep":120},"artDev":{"ru":"Развитие искусства","en":"Art Development","track":"studio","effect":"boxrep","capPerLevel":1,"stepBonus":0.012,"maxBonus":0.12,"costBase":400,"costStep":120},"starRushPostCap":false},"pvp":{"enabled":false,"ladder":{"enabled":false,"ru":"Сезонный рейтинг","en":"Ranked","divisions":["Бронза","Серебро","Золото","Платина","Алмаз","Голливуд"],"seasonDays":14,"reward":"cosmetic"},"charts":{"enabled":false,"ru":"Мировые чарты","en":"World Charts","period":"weekly","rankBy":["box","critics"]},"studioWars":{"enabled":false,"ru":"Студия-vs-студия","en":"Studio Wars","seasonDays":14,"scoreBy":"portfolio"},"awards":{"enabled":false,"ru":"Наградный сезон","en":"Awards","categories":["Лучший фильм","Лучшая роль","Лучшая режиссура","Лучший сценарий"],"rankBy":"reception"}},"reception":{"tomatoBase":35,"tomatoSlope":50,"tomatoLuck":120,"tomatoBand":0.18,"tomatoBandFloor":0.06},"merge":{"dupsPerLevel":[1,2,3,4,5]},"cardCd":{"baseSec":80,"perLevelSec":40,"resetStars":1}},
   "genres": {"drama":{"ru":"Драма","en":"Drama","icon":"drama"},"comedy":{"ru":"Комедия","en":"Comedy","icon":"laugh"},"action":{"ru":"Экшн","en":"Action","icon":"swords"},"arthouse":{"ru":"Артхаус","en":"Arthouse","icon":"palette"},"epic":{"ru":"Эпик","en":"Epic","icon":"mountain"}},
   "roles": ["PROTAGONIST","ANTAGONIST","LOVE","MENTOR","TWIST"],
-  "formats": {"short":{"id":"short","ru":"Короткометраж","en":"Short","slots":["PROTAGONIST","LOVE"],"cap":12,"lvl":1,"cd":30,"channels":["streaming","home","festival"],"req":{}},"film":{"id":"film","ru":"Фильм","en":"Film","slots":["PROTAGONIST","ANTAGONIST","MENTOR"],"cap":18,"lvl":1,"cd":75,"channels":["streaming","home","festival","intl"],"req":{}},"miniseries":{"id":"miniseries","ru":"Мини-сериал","en":"Mini-series","slots":["PROTAGONIST","LOVE","MENTOR"],"cap":22,"lvl":3,"cd":120,"channels":["streaming"],"req":{}},"documentary":{"id":"documentary","ru":"Документалка","en":"Documentary","slots":["PROTAGONIST","MENTOR","TWIST"],"cap":20,"lvl":2,"cd":110,"channels":["streaming","festival"],"req":{}},"blockbuster":{"id":"blockbuster","ru":"Блокбастер","en":"Blockbuster","slots":["PROTAGONIST","ANTAGONIST","LOVE","MENTOR"],"cap":30,"lvl":7,"cd":160,"channels":["home","intl"],"req":{"castTier":2}},"series":{"id":"series","ru":"Сериал","en":"Series","slots":["PROTAGONIST","ANTAGONIST","LOVE","MENTOR"],"cap":35,"lvl":9,"cd":200,"channels":["streaming"],"req":{}},"animation":{"id":"animation","ru":"Анимация","en":"Animation","slots":["PROTAGONIST","LOVE","MENTOR","TWIST"],"cap":32,"lvl":11,"cd":180,"channels":["streaming","home"],"req":{}},"saga":{"id":"saga","ru":"Сага","en":"Saga","slots":["PROTAGONIST","ANTAGONIST","LOVE","MENTOR","TWIST"],"cap":40,"lvl":14,"cd":280,"channels":["home","intl"],"req":{"castTier":2}},"franchise":{"id":"franchise","ru":"Франшиза","en":"Franchise","slots":["PROTAGONIST","ANTAGONIST","LOVE","MENTOR","TWIST","PROTAGONIST"],"cap":55,"lvl":20,"cd":420,"channels":["intl","festival"],"req":{"castAlist":2,"fixedScript":"warsaga"}},"epopeya":{"id":"epopeya","ru":"Эпопея","en":"Epopee","slots":["PROTAGONIST","ANTAGONIST","LOVE","MENTOR","TWIST","PROTAGONIST"],"cap":70,"lvl":22,"cd":600,"channels":["intl","festival"],"req":{"castAlist":3,"fixedScript":"warsaga"}}},
+  "formats": {"short":{"id":"short","ru":"Короткометраж","en":"Short","slots":["PROTAGONIST","LOVE"],"cap":12,"lvl":1,"cd":30,"channels":["streaming","home","festival","local","tv","artcircuit"],"req":{}},"film":{"id":"film","ru":"Фильм","en":"Film","slots":["PROTAGONIST","ANTAGONIST","MENTOR"],"cap":18,"lvl":1,"cd":75,"channels":["streaming","home","festival","intl","local","tv"],"req":{}},"miniseries":{"id":"miniseries","ru":"Мини-сериал","en":"Mini-series","slots":["PROTAGONIST","LOVE","MENTOR"],"cap":22,"lvl":3,"cd":120,"channels":["streaming","local","tv","artcircuit"],"req":{}},"documentary":{"id":"documentary","ru":"Документалка","en":"Documentary","slots":["PROTAGONIST","MENTOR","TWIST"],"cap":20,"lvl":2,"cd":110,"channels":["streaming","festival","local","tv","artcircuit"],"req":{}},"blockbuster":{"id":"blockbuster","ru":"Блокбастер","en":"Blockbuster","slots":["PROTAGONIST","ANTAGONIST","LOVE","MENTOR"],"cap":30,"lvl":7,"cd":160,"channels":["home","intl"],"req":{"castTier":2}},"series":{"id":"series","ru":"Сериал","en":"Series","slots":["PROTAGONIST","ANTAGONIST","LOVE","MENTOR"],"cap":35,"lvl":9,"cd":200,"channels":["streaming"],"req":{}},"animation":{"id":"animation","ru":"Анимация","en":"Animation","slots":["PROTAGONIST","LOVE","MENTOR","TWIST"],"cap":32,"lvl":11,"cd":180,"channels":["streaming","home","artcircuit"],"req":{}},"saga":{"id":"saga","ru":"Сага","en":"Saga","slots":["PROTAGONIST","ANTAGONIST","LOVE","MENTOR","TWIST"],"cap":40,"lvl":14,"cd":280,"channels":["home","intl"],"req":{"castTier":2}},"franchise":{"id":"franchise","ru":"Франшиза","en":"Franchise","slots":["PROTAGONIST","ANTAGONIST","LOVE","MENTOR","TWIST","PROTAGONIST"],"cap":55,"lvl":20,"cd":420,"channels":["intl","festival"],"req":{"castAlist":2,"fixedScript":"warsaga"}},"epopeya":{"id":"epopeya","ru":"Эпопея","en":"Epopee","slots":["PROTAGONIST","ANTAGONIST","LOVE","MENTOR","TWIST","PROTAGONIST"],"cap":70,"lvl":22,"cd":600,"channels":["intl","festival"],"req":{"castAlist":3,"fixedScript":"warsaga"}}},
   "channels": [
     {"id":"streaming","ru":"Стриминг","en":"Streaming","icon":"globe","th":0,"m":3,"a":0.8,"flop":false,"desc":{"ru":"Безопасно: провала нет, но репутации мало","en":"Safe: no flop, but low reputation"}},
     {"id":"home","ru":"Домашнее видео","en":"Home video","icon":"house","th":130,"m":5,"a":2.6,"flop":true,"desc":{"ru":"Лучшие деньги; слабый фильм провалится и потеряет 🏆","en":"Best money; a weak film flops and loses 🏆"}},
     {"id":"festival","ru":"Фестиваль","en":"Festival","icon":"trophy","th":185,"m":3,"a":3.2,"flop":true,"flag":"festivalEnabled","desc":{"ru":"Престиж: много репутации; провал стоит 🏆","en":"Prestige: high reputation; a flop costs 🏆"}},
-    {"id":"intl","ru":"Международный","en":"International","icon":"swords","th":215,"m":4,"a":3.6,"flop":true,"flag":"pvpEnabled","pvp":true,"desc":{"ru":"Мировой прокат: высокая планка мирового качества, лучшие деньги+🏆; слабый фильм проваливается","en":"World release: high world-quality bar, best money+🏆; a weak film flops"}}
+    {"id":"intl","ru":"Международный","en":"International","icon":"swords","th":215,"m":4,"a":3.6,"flop":true,"flag":"pvpEnabled","pvp":true,"desc":{"ru":"Мировой прокат: высокая планка мирового качества, лучшие деньги+🏆; слабый фильм проваливается","en":"World release: high world-quality bar, best money+🏆; a weak film flops"}},
+    {"id":"local","ru":"Локальные кинотеатры","en":"Local Cinemas","icon":"house","th":75,"m":4.4,"a":1.8,"flop":true,"desc":{"ru":"Региональный прокат: норм деньги, мягкий порог","en":"Regional: decent money, soft bar"}},
+    {"id":"tv","ru":"ТВ-сеть","en":"TV Network","icon":"globe","th":100,"m":4,"a":2.2,"flop":true,"desc":{"ru":"Телеэфир: деньги + репутация","en":"Broadcast: money + rep"}},
+    {"id":"artcircuit","ru":"Арт-прокат","en":"Arthouse Circuit","icon":"palette","th":120,"m":2.6,"a":3.4,"flop":true,"desc":{"ru":"Артхаус-сеть: много репутации, мало денег","en":"Arthouse: high rep, low money"}}
   ],
-  "world": {"enabled":true,"cycleDays":7,"demandAmp":0.18,"eventDur":3,"events":[{"id":"awards","ru":"Сезон наград","en":"Awards season","mult":{"channel":{"festival":1.25}}},{"id":"streamboom","ru":"Бум стриминга","en":"Streaming boom","mult":{"channel":{"streaming":1.3}}},{"id":"bigscreen","ru":"Эпоха блокбастеров","en":"Blockbuster era","mult":{"channel":{"home":1.2,"intl":1.2}}},{"id":"indiewave","ru":"Инди-волна","en":"Indie wave","mult":{"genre":{"arthouse":1.25,"drama":1.1}}},{"id":"laughter","ru":"Время смеяться","en":"Time to laugh","mult":{"genre":{"comedy":1.25}}},{"id":"epicage","ru":"Век эпопей","en":"Age of epics","mult":{"genre":{"epic":1.2,"action":1.1}}}]},
+  "world": {"enabled":true,"cycleDays":7,"demandAmp":0.35,"eventDur":3,"events":[{"id":"awards","ru":"Сезон наград","en":"Awards season","mult":{"channel":{"festival":1.25,"artcircuit":1.25}}},{"id":"streamboom","ru":"Бум стриминга","en":"Streaming boom","mult":{"channel":{"streaming":1.3}}},{"id":"bigscreen","ru":"Эпоха блокбастеров","en":"Blockbuster era","mult":{"channel":{"home":1.2,"intl":1.2,"local":1.2,"tv":1.2}}},{"id":"indiewave","ru":"Инди-волна","en":"Indie wave","mult":{"genre":{"arthouse":1.25,"drama":1.1}}},{"id":"laughter","ru":"Время смеяться","en":"Time to laugh","mult":{"genre":{"comedy":1.25}}},{"id":"epicage","ru":"Век эпопей","en":"Age of epics","mult":{"genre":{"epic":1.2,"action":1.1}}}]},
   "speed": {"enabled":true,"rushCdStars":1,"rushDailyCap":5,"refillEnergyStars":1,"instantDevMoneyMult":1,"parallelSlots":1},
   "tropeQCap": 0.15,
   "tropes": [
@@ -945,16 +948,16 @@ if(typeof window!=='undefined'&&!window.PROKAT_CONTENT){try{window.PROKAT_CONTEN
     {"id":"c19","name":"Тея Лисс","role":"PROTAGONIST","genre":"arthouse","act":7,"cha":7,"dra":8,"com":4,"bud":7,"tier":2,"lore":"Хрупкая на вид, несокрушимая в кадре.","cardLevel":9},
     {"id":"c21","name":"Иван Бронь","role":"MENTOR","genre":"epic","act":6,"cha":7,"dra":8,"com":3,"bud":6,"tier":2,"lore":"Голос как медь, школа старой выправки.","cardLevel":10},
     {"id":"c22","name":"Майя Лето","role":"LOVE","genre":"action","act":7,"cha":7,"dra":5,"com":5,"bud":6,"tier":2,"lore":"Дублёрша, ставшая лицом франшиз.","cardLevel":11},
-    {"id":"c14","name":"Командор Вольт","role":"PROTAGONIST","genre":"epic","act":9,"cha":7,"dra":8,"com":3,"bud":8,"tier":3,"lore":"Командор погорелого театра.","cardLevel":12},
+    {"id":"c14","name":"Командор Вольт","role":"PROTAGONIST","genre":"epic","act":9,"cha":7,"dra":8,"com":5,"bud":6,"tier":3,"lore":"Командор погорелого театра.","cardLevel":12},
     {"id":"c15","name":"Леди Аметист","role":"MENTOR","genre":"epic","act":7,"cha":9,"dra":9,"com":3,"bud":7,"tier":3,"lore":"Одно её появление — уже сцена.","cardLevel":12},
-    {"id":"c16","name":"Рэй Полночь","role":"TWIST","genre":"action","act":9,"cha":7,"dra":7,"com":5,"bud":8,"tier":3,"lore":"Появляется там, где не ждут.","cardLevel":13},
-    {"id":"c17","name":"Юна Светлая","role":"LOVE","genre":"arthouse","act":7,"cha":9,"dra":8,"com":5,"bud":7,"tier":3,"lore":"Камера её любит без грима.","cardLevel":13},
-    {"id":"c23","name":"Гром Орлов","role":"ANTAGONIST","genre":"epic","act":8,"cha":7,"dra":9,"com":4,"bud":8,"tier":3,"lore":"Тиран экрана, что держит зал в кулаке.","cardLevel":14},
+    {"id":"c16","name":"Рэй Полночь","role":"TWIST","genre":"action","act":9,"cha":7,"dra":7,"com":7,"bud":6,"tier":3,"lore":"Появляется там, где не ждут.","cardLevel":13},
+    {"id":"c17","name":"Юна Светлая","role":"LOVE","genre":"arthouse","act":7,"cha":9,"dra":8,"com":7,"bud":7,"tier":3,"lore":"Камера её любит без грима.","cardLevel":13},
+    {"id":"c23","name":"Гром Орлов","role":"ANTAGONIST","genre":"epic","act":8,"cha":7,"dra":9,"com":4,"bud":6,"tier":3,"lore":"Тиран экрана, что держит зал в кулаке.","cardLevel":14},
     {"id":"c24","name":"Аврора Стейн","role":"PROTAGONIST","genre":"drama","act":9,"cha":9,"dra":9,"com":4,"bud":6,"tier":4,"lore":"Лицо новой волны драмы.","cardLevel":17},
     {"id":"c25","name":"Кайл Мрак","role":"ANTAGONIST","genre":"action","act":10,"cha":7,"dra":8,"com":5,"bud":8,"tier":4,"lore":"Самый кассовый антагонист десятилетия.","cardLevel":18},
     {"id":"c26","name":"Лира Вэйл","role":"LOVE","genre":"epic","act":8,"cha":9,"dra":9,"com":5,"bud":8,"tier":4,"lore":"Эпическая муза больших полотен.","cardLevel":19},
-    {"id":"c27","name":"Звезда Эклипс","role":"PROTAGONIST","genre":"epic","act":10,"cha":9,"dra":9,"com":5,"bud":9,"tier":5,"lore":"Легенда — её имя само продаёт билеты.","cardLevel":23},
-    {"id":"c28","name":"Морриган","role":"ANTAGONIST","genre":"drama","act":9,"cha":9,"dra":10,"com":5,"bud":6,"tier":5,"lore":"Икона зла, которой аплодируют стоя.","cardLevel":23},
+    {"id":"c27","name":"Звезда Эклипс","role":"PROTAGONIST","genre":"epic","act":10,"cha":9,"dra":9,"com":7,"bud":9,"tier":5,"lore":"Легенда — её имя само продаёт билеты.","cardLevel":23},
+    {"id":"c28","name":"Морриган","role":"ANTAGONIST","genre":"drama","act":9,"cha":9,"dra":10,"com":7,"bud":8,"tier":5,"lore":"Икона зла, которой аплодируют стоя.","cardLevel":23},
     {"id":"c29","name":"Марина Вестова","role":"LOVE","genre":"arthouse","act":7,"cha":8,"dra":8,"com":4,"bud":6,"tier":3,"lore":"Играет молчание громче слов.","cardLevel":15},
     {"id":"c30","name":"Тимур Аль-Рашид","role":"ANTAGONIST","genre":"action","act":9,"cha":7,"dra":6,"com":5,"bud":6,"tier":3,"lore":"Злодей, которому веришь.","cardLevel":15},
     {"id":"c31","name":"Юдзи Сато","role":"TWIST","genre":"epic","act":6,"cha":7,"dra":9,"com":6,"bud":6,"tier":3,"lore":"Поворот, что меняет всё.","cardLevel":16},
@@ -962,11 +965,19 @@ if(typeof window!=='undefined'&&!window.PROKAT_CONTENT){try{window.PROKAT_CONTEN
     {"id":"c33","name":"Бернард Холл","role":"MENTOR","genre":"drama","act":7,"cha":8,"dra":10,"com":6,"bud":7,"tier":4,"lore":"Голос, которому веришь с первого дубля.","cardLevel":21},
     {"id":"c34","name":"Сабина Кросс","role":"LOVE","genre":"arthouse","act":8,"cha":9,"dra":9,"com":5,"bud":7,"tier":4,"lore":"Камера в неё влюблена.","cardLevel":22},
     {"id":"c35","name":"Виктор Драгомир","role":"PROTAGONIST","genre":"epic","act":9,"cha":9,"dra":9,"com":6,"bud":8,"tier":5,"lore":"Лицо эпохи на экране.","cardLevel":24},
-    {"id":"c36","name":"Ава Лоренц","role":"ANTAGONIST","genre":"drama","act":8,"cha":9,"dra":10,"com":6,"bud":8,"tier":5,"lore":"Идеальная злодейка десятилетия.","cardLevel":25},
+    {"id":"c36","name":"Ава Лоренц","role":"ANTAGONIST","genre":"drama","act":8,"cha":9,"dra":10,"com":8,"bud":8,"tier":5,"lore":"Идеальная злодейка десятилетия.","cardLevel":25},
     {"id":"c37","name":"Касьян Орлов","role":"MENTOR","genre":"epic","act":8,"cha":8,"dra":10,"com":7,"bud":8,"tier":5,"lore":"Каждое слово — закон жанра.","cardLevel":26},
     {"id":"c38","name":"Лейла Фарид","role":"LOVE","genre":"action","act":9,"cha":10,"dra":8,"com":7,"bud":8,"tier":5,"lore":"Химия зашкаливает.","cardLevel":26},
-    {"id":"c39","name":"Гром Стальной","role":"TWIST","genre":"action","act":10,"cha":8,"dra":8,"com":7,"bud":8,"tier":5,"lore":"Никто не ждёт его выхода.","cardLevel":27},
-    {"id":"c40","name":"Иоланта Ви","role":"PROTAGONIST","genre":"comedy","act":8,"cha":10,"dra":8,"com":8,"bud":8,"tier":5,"lore":"Комедийный гений тайминга.","cardLevel":28}
+    {"id":"c39","name":"Гром Стальной","role":"TWIST","genre":"action","act":10,"cha":9,"dra":8,"com":7,"bud":8,"tier":5,"lore":"Никто не ждёт его выхода.","cardLevel":27},
+    {"id":"c40","name":"Иоланта Ви","role":"PROTAGONIST","genre":"comedy","act":8,"cha":10,"dra":8,"com":8,"bud":8,"tier":5,"lore":"Комедийный гений тайминга.","cardLevel":28},
+    {"id":"c41","name":"Орион Блэйк","role":"PROTAGONIST","genre":"action","act":10,"cha":9,"dra":8,"com":7,"bud":8,"tier":5,"cardLevel":17,"lore":"Лицо франшизы нового поколения."},
+    {"id":"c42","name":"Селена Вольф","role":"ANTAGONIST","genre":"epic","act":9,"cha":9,"dra":9,"com":7,"bud":8,"tier":5,"cardLevel":20,"lore":"Тень, что движет сюжетом."},
+    {"id":"c43","name":"Профессор Кейн","role":"MENTOR","genre":"drama","act":8,"cha":9,"dra":10,"com":7,"bud":8,"tier":5,"cardLevel":22,"lore":"Каждое слово — мастер-класс."},
+    {"id":"c44","name":"Ирис Мун","role":"LOVE","genre":"arthouse","act":9,"cha":10,"dra":9,"com":6,"bud":8,"tier":5,"cardLevel":24,"lore":"Камера не дышит без неё."},
+    {"id":"c45","name":"Зеро Найт","role":"TWIST","genre":"action","act":10,"cha":8,"dra":9,"com":7,"bud":8,"tier":5,"cardLevel":26,"lore":"Никто не ждёт его хода."},
+    {"id":"c46","name":"Аврелия Голд","role":"PROTAGONIST","genre":"drama","act":9,"cha":10,"dra":10,"com":5,"bud":8,"tier":5,"cardLevel":28,"lore":"Икона десятилетия."},
+    {"id":"c47","name":"Барон Кросс","role":"ANTAGONIST","genre":"comedy","act":8,"cha":10,"dra":8,"com":8,"bud":7,"tier":4,"cardLevel":18,"lore":"Злодей, над которым смеёшься."},
+    {"id":"c48","name":"Леди Стелла","role":"TWIST","genre":"epic","act":9,"cha":9,"dra":10,"com":6,"bud":8,"tier":5,"cardLevel":30,"lore":"Финальный аккорд эпопеи."}
   ],
   "starter": ["c1","c2","c3","c4","c5","c6","c8","c18","c7"],
   "titles": [
@@ -990,7 +1001,9 @@ if(typeof window!=='undefined'&&!window.PROKAT_CONTENT){try{window.PROKAT_CONTEN
     {"id":"cgi","ru":"CGI / VFX","en":"VFX","type":"q","mult":1.14,"costBase":500,"costK":0.04,"unlock":10},
     {"id":"anim","ru":"Анимация","en":"Animation","type":"q","mult":1.16,"costBase":500,"costK":0.08,"unlock":11},
     {"id":"score","ru":"Композитор","en":"Score","type":"rep","mult":1.2,"costBase":450,"costK":0.04,"unlock":15},
-    {"id":"mocap","ru":"Mocap","en":"Mocap","type":"q","mult":1.18,"costBase":700,"costK":0.05,"unlock":20}
+    {"id":"mocap","ru":"Mocap","en":"Mocap","type":"q","mult":1.18,"costBase":700,"costK":0.05,"unlock":20},
+    {"id":"dop","ru":"Оператор-постановщик","en":"DoP","type":"q","mult":1.06,"costBase":420,"costK":0.05,"unlock":8},
+    {"id":"vfx2","ru":"Продвинутый VFX","en":"Advanced VFX","type":"q","mult":1.08,"costBase":700,"costK":0.05,"unlock":14}
   ],
   "tech": [
     {"id":"edit","ru":"Монтаж","en":"Editing","tier":1,"reqLevel":1,"prereq":[],"costMoney":180,"costPrestige":0,"researchHours":2,"unlocksPerk":"edit","satisfies":["format:film"],"eureka":{"when":"premiere:any","cut":0.4}},
@@ -1003,7 +1016,11 @@ if(typeof window!=='undefined'&&!window.PROKAT_CONTENT){try{window.PROKAT_CONTEN
     {"id":"cgi","ru":"CGI / VFX","en":"VFX","tier":2,"reqLevel":9,"prereq":["cinema"],"costMoney":820,"costPrestige":120,"researchHours":12,"unlocksPerk":"cgi","satisfies":["format:saga"],"eureka":{"when":"genre:action","cut":0.4}},
     {"id":"anim","ru":"Анимация","en":"Animation","tier":2,"reqLevel":11,"prereq":["cgi"],"costMoney":900,"costPrestige":140,"researchHours":14,"unlocksPerk":"anim","satisfies":["format:animation"],"eureka":{"when":"genre:comedy","cut":0.4}},
     {"id":"imax","ru":"IMAX / Большой экран","en":"IMAX","tier":3,"reqLevel":13,"prereq":["cinema"],"costMoney":1100,"costPrestige":180,"researchHours":18,"unlocksPerk":null,"satisfies":[],"eureka":{"when":"channel:intl","cut":0.4}},
-    {"id":"mocap","ru":"Motion Capture","en":"Mocap","tier":3,"reqLevel":16,"prereq":["cgi"],"costMoney":1300,"costPrestige":220,"researchHours":22,"unlocksPerk":"mocap","satisfies":["format:epopeya"],"eureka":{"when":"genre:epic","cut":0.4}}
+    {"id":"mocap","ru":"Motion Capture","en":"Mocap","tier":3,"reqLevel":16,"prereq":["cgi"],"costMoney":1300,"costPrestige":220,"researchHours":22,"unlocksPerk":"mocap","satisfies":["format:epopeya"],"eureka":{"when":"genre:epic","cut":0.4}},
+    {"id":"future_lab","ru":"Лаборатория будущего","en":"Future Lab","tier":3,"reqLevel":17,"prereq":["mocap"],"costMoney":1400,"costPrestige":220,"researchHours":22,"unlocksPerk":null,"unlocksEndless":"futureTech","satisfies":[],"eureka":{"when":"trope:any","cut":0.4}},
+    {"id":"led_stage","ru":"LED-павильон","en":"LED Volume","tier":3,"reqLevel":19,"prereq":["imax"],"costMoney":1600,"costPrestige":260,"researchHours":24,"unlocksPerk":null,"satisfies":[],"eureka":{"when":"genre:epic","cut":0.4}},
+    {"id":"dop_tech","ru":"Операторская школа","en":"Cinematography School","tier":2,"reqLevel":8,"prereq":["cinema"],"costMoney":700,"costPrestige":100,"researchHours":10,"unlocksPerk":"dop","satisfies":[],"eureka":{"when":"genre:drama","cut":0.4}},
+    {"id":"vfx2_tech","ru":"VFX-супервайзинг","en":"VFX Supervision","tier":3,"reqLevel":14,"prereq":["cgi"],"costMoney":1100,"costPrestige":180,"researchHours":18,"unlocksPerk":"vfx2","satisfies":[],"eureka":{"when":"genre:action","cut":0.4}}
   ],
   "studio": [
     {"id":"st_base","ru":"Студийный старт","en":"Studio Start","tier":1,"reqLevel":1,"prereq":[],"costMoney":0,"costPrestige":0,"devHours":0,"unlocks":{"genres":["drama","comedy"],"scenarios":["duo"],"tiers":[1]}},
@@ -1015,7 +1032,9 @@ if(typeof window!=='undefined'&&!window.PROKAT_CONTENT){try{window.PROKAT_CONTEN
     {"id":"st_tropes","ru":"Отдел тропов","en":"Trope Dept","tier":2,"reqLevel":7,"prereq":["st_action","st_drama"],"costMoney":600,"costPrestige":100,"devHours":9,"unlocks":{"tropes":["*"]}},
     {"id":"st_director","ru":"Режиссёрское бюро","en":"Director Bureau","tier":3,"reqLevel":8,"prereq":["st_cast2"],"costMoney":1200,"costPrestige":200,"devHours":16,"unlocks":{"role":"DIRECTOR","directors":["dir_visionary","dir_craftsman","dir_showman","dir_maestro","dir_provocateur"]}},
     {"id":"st_epic","ru":"Жанр: Эпик","en":"Genre: Epic","tier":3,"reqLevel":9,"prereq":["st_action"],"costMoney":900,"costPrestige":160,"devHours":14,"unlocks":{"genres":["epic"],"scenarios":["chosen","warsaga"]}},
-    {"id":"st_alist","ru":"A-лист таланты","en":"A-list Talent","tier":3,"reqLevel":12,"prereq":["st_cast2"],"costMoney":1400,"costPrestige":240,"devHours":20,"unlocks":{"tiers":[4,5]}}
+    {"id":"st_alist","ru":"A-лист таланты","en":"A-list Talent","tier":3,"reqLevel":12,"prereq":["st_cast2"],"costMoney":1400,"costPrestige":240,"devHours":20,"unlocks":{"tiers":[4,5]}},
+    {"id":"st_art_inst","ru":"Институт искусства","en":"Art Institute","tier":3,"reqLevel":17,"prereq":["st_alist"],"costMoney":1400,"costPrestige":220,"devHours":22,"unlocks":{"endless":"artDev"}},
+    {"id":"st_franchise","ru":"Франшиз-дивизион","en":"Franchise Division","tier":3,"reqLevel":21,"prereq":["st_art_inst"],"costMoney":1800,"costPrestige":320,"devHours":24,"unlocks":{}}
   ],
   "directors": [
     {"id":"dir_visionary","ru":"Режиссёр-визионер","en":"Visionary Director","tier":3,"kind":"director","effect":{"type":"q","mult":1.08},"bud":6,"costBase":900,"costK":0.05,"reqStudio":"st_director"},
@@ -1025,7 +1044,19 @@ if(typeof window!=='undefined'&&!window.PROKAT_CONTENT){try{window.PROKAT_CONTEN
     {"id":"dir_provocateur","ru":"Режиссёр-провокатор","en":"Provocateur Director","tier":4,"kind":"director","effect":{"type":"rep","mult":1.12},"bud":6,"costBase":1000,"costK":0.05,"reqStudio":"st_director"}
   ],
   "cardPerks": {"PROTAGONIST_action":{"id":"unbreakable","ru":"Несокрушимый","type":"q_genre","genre":"action","base":0.04,"step":0.02},"PROTAGONIST_drama":{"id":"redeemer","ru":"Искупление","type":"q_genre","genre":"drama","base":0.04,"step":0.02},"PROTAGONIST_comedy":{"id":"showstopper","ru":"Душа компании","type":"q_genre","genre":"comedy","base":0.04,"step":0.02},"PROTAGONIST_epic":{"id":"chosen","ru":"Избранный","type":"q_genre","genre":"epic","base":0.05,"step":0.025},"PROTAGONIST_arthouse":{"id":"darling","ru":"Любимец критиков","type":"rep","base":0.06,"step":0.03},"ANTAGONIST_action":{"id":"nemesis","ru":"Заклятый враг","type":"q_genre","genre":"action","base":0.04,"step":0.02},"ANTAGONIST_drama":{"id":"fallen","ru":"Падший","type":"q_genre","genre":"drama","base":0.04,"step":0.02},"ANTAGONIST_epic":{"id":"tyrant","ru":"Тиран экрана","type":"q_genre","genre":"epic","base":0.04,"step":0.02},"ANTAGONIST_comedy":{"id":"charmvillain","ru":"Харизматичный злодей","type":"chem","base":0.03,"step":0.015},"LOVE_comedy":{"id":"spark","ru":"Искра","type":"q_genre","genre":"comedy","base":0.04,"step":0.02},"LOVE_drama":{"id":"chemistry","ru":"Химия на экране","type":"chem","base":0.04,"step":0.02},"LOVE_action":{"id":"chemistry","ru":"Химия на экране","type":"chem","base":0.04,"step":0.02},"LOVE_epic":{"id":"muse","ru":"Муза","type":"q_genre","genre":"epic","base":0.04,"step":0.02},"LOVE_arthouse":{"id":"chemistry","ru":"Химия на экране","type":"chem","base":0.04,"step":0.02},"MENTOR_drama":{"id":"sage","ru":"Голос мудрости","type":"rep","base":0.06,"step":0.03},"MENTOR_epic":{"id":"mentor","ru":"Наставник","type":"q","base":0.03,"step":0.02},"MENTOR_action":{"id":"mentor","ru":"Наставник","type":"q","base":0.03,"step":0.02},"MENTOR_arthouse":{"id":"sage","ru":"Голос мудрости","type":"rep","base":0.06,"step":0.03},"TWIST_action":{"id":"twist","ru":"Неожиданный поворот","type":"q","base":0.05,"step":0.025},"TWIST_comedy":{"id":"twist","ru":"Неожиданный поворот","type":"q","base":0.05,"step":0.025},"TWIST_arthouse":{"id":"enigma","ru":"Загадка","type":"rep","base":0.05,"step":0.025},"ALIST":{"id":"alist","ru":"A-list звезда","type":"q","base":0.06,"step":0.01,"alist":true}},
-  "unlock": {"tiers":{"2":6,"3":12,"4":17,"5":27},"studioPerks":{"edit":1,"mkt":2,"sound":2,"cinema":7,"cgi":10,"anim":11,"score":15,"mocap":20},"channels":{"festival":4,"intl":6},"alistTier":3}
+  "unlock": {"tiers":{"2":6,"3":12,"4":17,"5":27},"studioPerks":{"edit":1,"mkt":2,"sound":2,"cinema":7,"cgi":10,"anim":11,"score":15,"mocap":20,"dop":8,"vfx2":14},"channels":{"festival":4,"intl":6},"alistTier":3},
+  "cardPacks": [
+    {"id":"daily","ru":"Дневной бокс","en":"Daily Box","icon":"gift","cost":{"free":true},"n":1,"odds":[[1,0.62],[2,0.28],[3,0.1]],"desc":{"ru":"Бесплатно раз в день — случайная карта","en":"Free once a day — a random card"},"kind":"actor"},
+    {"id":"basic","ru":"Базовый бокс","en":"Basic Box","icon":"sparkles","cost":{"money":360},"n":3,"odds":[[1,0.45],[2,0.3],[3,0.18],[4,0.05],[5,0.02]],"desc":{"ru":"3 случайные карты","en":"3 random cards"},"kind":"actor"},
+    {"id":"premium","ru":"Премиум бокс","en":"Premium Box","icon":"star","cost":{"stars":3},"n":3,"odds":[[1,0.18],[2,0.3],[3,0.3],[4,0.16],[5,0.06]],"desc":{"ru":"3 карты, выше шанс редких","en":"3 cards, better rare odds"},"kind":"actor"},
+    {"id":"th_drama","ru":"Драма-сет","en":"Drama Set","icon":"sparkles","cost":{"money":450},"n":3,"genre":"drama","odds":[[1,0.4],[2,0.32],[3,0.2],[4,0.06],[5,0.02]],"desc":{"ru":"3 карты жанра «драма»","en":"3 drama cards"},"kind":"actor"},
+    {"id":"th_action","ru":"Экшн-сет","en":"Action Set","icon":"sparkles","cost":{"money":450},"n":3,"genre":"action","odds":[[1,0.4],[2,0.32],[3,0.2],[4,0.06],[5,0.02]],"desc":{"ru":"3 карты жанра «экшн»","en":"3 action cards"},"kind":"actor"},
+    {"id":"th_comedy","ru":"Комедия-сет","en":"Comedy Set","icon":"sparkles","cost":{"money":450},"n":3,"genre":"comedy","odds":[[1,0.4],[2,0.32],[3,0.2],[4,0.06],[5,0.02]],"desc":{"ru":"3 карты жанра «комедия»","en":"3 comedy cards"},"kind":"actor"},
+    {"id":"directors","kind":"director","ru":"Бокс режиссёров","en":"Directors Box","icon":"sparkles","cost":{"money":600},"n":2,"odds":[],"desc":{"ru":"2 случайных режиссёра","en":"2 random directors"}},
+    {"id":"writers","kind":"scenario","ru":"Бокс сценаристов","en":"Writers Box","icon":"sparkles","cost":{"money":520},"n":2,"odds":[],"desc":{"ru":"2 случайных сценария","en":"2 random scripts"}},
+    {"id":"tech","kind":"tech","ru":"Бокс технологий","en":"Tech Box","icon":"star","cost":{"stars":4},"n":1,"odds":[],"desc":{"ru":"Мгновенно откроет случайную технологию","en":"Instantly unlocks a random tech"}},
+    {"id":"mega","kind":"any","ru":"МЕГА-бокс","en":"Mega Box","icon":"star","cost":{"stars":6},"n":5,"odds":[[1,0.3],[2,0.3],[3,0.25],[4,0.1],[5,0.05]],"desc":{"ru":"5 карт любого типа","en":"5 cards of any type"}}
+  ]
 };}catch(e){}}
 (function applyContent(){const X=(typeof window!=='undefined')&&window.PROKAT_CONTENT;if(!X)return;try{
  if(X.genres)Object.assign(GENRE,X.genres);
@@ -1146,7 +1177,7 @@ function _mul32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>
 function qRollG(seed,v){if(v<=0)return 0;const r=_mul32((seed>>>0)||1);const t=(r()+r())/2-0.5;return t*2*v;}
 /* RECEPTION: diegetic premiere variance -> critics (tomatometer) + box office. Two EV-neutral payout rolls
    (critics->rep, box->money), band shrinks with cast-fit. Q untouched (win/flop deterministic) -> firewall + economy intact. */
-function receptionG(Qexp,th,fit,win,seed){fit=Math.min(1,Math.max(0,fit||0));const band=qVarBandG(fit);const r=_mul32((seed>>>0)||1);const roll=()=>{const t=(r()+r())/2-0.5;return t*2*band;};const cRoll=roll(),bRoll=roll();const RC=(CFG.reception||{});const base=(RC.tomatoBase!=null?RC.tomatoBase:35)+(RC.tomatoSlope!=null?RC.tomatoSlope:55)*fit;let tomato=Math.round(Math.max(2,Math.min(99,base+cRoll*(RC.tomatoLuck!=null?RC.tomatoLuck:120))));if(win===false)tomato=Math.min(tomato,45);return{repMult:1+cRoll,moneyMult:1+bRoll,cRoll,bRoll,band,tomato};}
+function receptionG(Qexp,th,fit,win,seed){fit=Math.min(1,Math.max(0,fit||0));const band=qVarBandG(fit);const r=_mul32((seed>>>0)||1);const roll=()=>{const t=(r()+r())/2-0.5;return t*2*band;};const cRoll=roll(),bRoll=roll();const RC=(CFG.reception||{});const tBand=Math.max((RC.tomatoBandFloor!=null?RC.tomatoBandFloor:0.06),(RC.tomatoBand!=null?RC.tomatoBand:0.18)*(1-0.4*fit));const tRoll=(function(){const tt=(r()+r())/2-0.5;return tt*2*tBand;})();const base=(RC.tomatoBase!=null?RC.tomatoBase:35)+(RC.tomatoSlope!=null?RC.tomatoSlope:50)*fit;let tomato=Math.round(Math.max(2,Math.min(99,base+tRoll*(RC.tomatoLuck!=null?RC.tomatoLuck:120))));if(win===false)tomato=Math.min(tomato,45);return{repMult:1+cRoll,moneyMult:1+bRoll,cRoll,bRoll,band,tomato};}
 function tomatoVerdict(t){const en=SET.lang==='en';if(t>=75)return en?'Certified Fresh':'Сертифицировано свежо';if(t>=60)return en?'Fresh':'Свежо';return en?'Rotten':'Гнило';}
 function boxLabel(m,band){const en=SET.lang==='en';band=band||0.05;if(m==null)return'';if(m>1+0.4*band)return en?'Box-office hit 💸':'Кассовый хит 💸';if(m<1-0.4*band)return en?'Modest gross':'Скромные сборы';return en?'Solid run':'Окупился';}
 function hashCast(cards){let hh=2166136261;(cards||[]).forEach(c=>{const id=(c&&c.id)||'';for(let i=0;i<id.length;i++){hh^=id.charCodeAt(i);hh=Math.imul(hh,16777619);}});return hh>>>0;}
@@ -1200,6 +1231,11 @@ function cardFull(c,opt){opt=opt||{};
    <div class="pk-poster-frame" style="height:92px;position:relative"><span class="pk-poster-frame__sil"></span>${c.tier>=3?'<span class="pk-badge pk-badge--foil" style="position:absolute;top:6px;right:6px">★</span>':''}</div>
    <div class="pk-card-header" style="margin-top:8px"><div class="pk-card-header__name">${c.name}</div><div class="pk-card-header__meta">${chips(c)}</div></div>
    <div class="pk-stat-row" style="margin-top:8px">${statPips(c)}</div>
+ </article>`;}
+function cardU(o){return`<article class="pk-card${o.locked?' is-locked':''}" ${o.tap?`data-tap="${o.tap}" role="button" tabindex="0"`:''}>
+   <div class="pk-poster-frame" style="height:92px;position:relative;display:flex;align-items:center;justify-content:center;font-size:40px">${o.emoji||'🎴'}${(o.tier>=3)?'<span class="pk-badge pk-badge--foil" style="position:absolute;top:6px;right:6px">★</span>':''}${(o.cnt>1)?`<span class="pk-badge" style="position:absolute;top:6px;left:6px;background:var(--pk-color-accent,#6c7bff);color:#fff">×${o.cnt}</span>`:''}</div>
+   <div class="pk-card-header" style="margin-top:8px"><div class="pk-card-header__name">${o.name}</div><div class="pk-card-header__meta">${o.effHtml?`<span class="pk-chip">${o.effHtml}</span>`:''}</div></div>
+   ${o.lvl!=null?`<div class="pk-stat-row" style="margin-top:8px;justify-content:center"><span class="tiny muted">${SET.lang==='en'?'Lv':'Ур.'} ${o.lvl}/${CFG.maxDev}</span></div>`:''}
  </article>`;}
 function cardMini(c){return`<div style="display:flex;gap:8px;align-items:center">
    <div class="pk-poster-frame" style="width:38px;height:50px;flex:0 0 auto"><span class="pk-poster-frame__sil"></span></div>
@@ -1357,49 +1393,46 @@ SCREENS.premiere=function(){
 SCREENS.collection=function(){
  const seg=`<div class="seg" style="margin-bottom:12px"><button class="on" data-tap="go:collection">${t('collection')}</button><button data-tap="go:shop">${t('shop')}</button></div>`;
  const L=SET.lang; const cat=S.collCat||'actors';
- const counts={actors:[...new Set(S.coll)].length,scenarios:(S.scripts||[]).filter(id=>SCEN[id]).length,production:(S.prodOwned||[]).length,directors:(S.directorsOwned||[]).length};
+ const counts={actors:[...new Set(S.coll)].length,scenarios:[...new Set((S.scripts||[]).filter(id=>SCEN[id]))].length,production:[...new Set(S.prodOwned||[])].length,directors:[...new Set(S.directorsOwned||[])].length};
  const tabs=`<div class="seg" style="margin-bottom:12px">${[['actors',L==='en'?'Actors':'Актёры'],['scenarios',L==='en'?'Scenarios':'Сценарии'],['production',L==='en'?'Production':'Технологии'],['directors',L==='en'?'Directors':'Режиссёры']].map(x=>`<button class="${cat===x[0]?'on':''}" data-tap="collcat:${x[0]}">${x[1]} ${counts[x[0]]?'('+counts[x[0]]+')':''}</button>`).join('')}</div>`;
  const eff2=function(s){return s.type==='q'?('Q×'+s.mult.toFixed(2)):s.type==='money'?('💰×'+s.mult.toFixed(2)):('🏆×'+s.mult.toFixed(2));};
  const emptyHint=`<div style="padding:18px;text-align:center"><p class="sub">${L==='en'?'Nothing yet — research in the Lab (🔬), then buy in the Shop.':'Пока пусто — изучи в Лаборатории (🔬), потом купи в Магазине.'}</p><button class="pk-btn pk-btn--primary" data-tap="go:shop">→ ${L==='en'?'Shop':'Магазин'}</button></div>`;
  let body='';
  if(cat==='actors'){
-   const uniq=[...new Set(S.coll)];const ceil=repCeiling();
-   const cardsHtml=uniq.map(id=>{const c=eff(id);const d=cardLvl(id);const cnt=S.coll.filter(x=>x===id).length;const en=curEnergy(id);
-     const xp=(S.cardXp&&S.cardXp[id])||0;const atCeil=d>=ceil;const maxed=d>=CFG.maxDev;const into=xp-cumXp(d);const need=xpReqFor(d);const pct=maxed?100:clamp(Math.round(into/need*100),0,100);
-     const canTrain=!maxed&&!atCeil&&spendable()>=CFG.intensiveRep;
-     return `<div>${cardFull(c)}<div class="tiny muted" style="margin:6px 2px 2px;display:flex;justify-content:space-between"><span>${L==='en'?'Lv':'Ур.'} ${d}/${CFG.maxDev}${cnt>1?' ×'+cnt:''}</span><span>⚡${en}</span></div><div class="pk-meter" style="margin:4px 0"><div class="pk-meter__track"><div class="pk-meter__fill" style="width:${pct}%"></div></div><span class="pk-meter__val">${maxed?'MAX':atCeil?(L==='en'?'needs rep L'+(level()+1):'нужна реп. L'+(level()+1)):'XP '+into+'/'+need}</span></div>${(!maxed&&!atCeil)?`<button class="pk-btn ${canTrain?'pk-btn--secondary':'pk-btn--ghost'} pk-btn--block" style="font-size:11px" ${canTrain?`data-tap="train:${id}"`:'disabled'}>${L==='en'?'Intensive: +1 lvl':'Интенсив: +1 ур.'} · 🏆 ${CFG.intensiveRep}</button>`:''}</div>`;}).join('');
+   const uniq=[...new Set(S.coll)];const nowT=Date.now();const rs=(CFG.cardCd&&CFG.cardCd.resetStars)||1;
+   const cardsHtml=uniq.map(id=>{const c=eff(id);const d=cardLvl(id);const cnt=S.coll.filter(x=>x===id).length;
+     const cdLeft=(FLAGS.cardCooldown&&S.cardCd&&S.cardCd[id])?Math.max(0,S.cardCd[id]-nowT):0;
+     const cdStr=FLAGS.cardCooldown?(cdLeft>0?('⏳ '+fmtTime(Math.ceil(cdLeft/1000))):('✓ '+(L==='en'?'ready':'готов'))):('⚡'+curEnergy(id));
+     return `<div>${cardFull(c)}<div class="tiny muted" style="margin:6px 2px 2px;display:flex;justify-content:space-between"><span>${L==='en'?'Lv':'Ур.'} ${d}/${CFG.maxDev} <b style="color:var(--pk-color-accent)">×${cnt}</b></span><span>${cdStr}</span></div>${(FLAGS.cardCooldown&&cdLeft>0)?`<button class="pk-btn pk-btn--secondary pk-btn--block" style="font-size:11px" data-tap="cdreset:${id}">${L==='en'?'Reset cooldown':'Сбросить кулдаун'} · ⭐${rs}</button>`:''}</div>`;}).join('');
    body=`<div class="cards-grid">${cardsHtml}</div>`;
  } else if(cat==='scenarios'){
-   const owned=(S.scripts||[]).filter(id=>SCEN[id]);
-   body=owned.length?`<div class="cards-grid">${owned.map(id=>{const s=SCRIPTS[id];return `<div class="panel"><div class="set-row__l">📜 ${L==='en'?s.en:s.ru}</div><div class="tiny muted" style="margin-top:4px">${(s.roles||[]).join(' · ')} · ×${(s.bonus||1).toFixed(2)}</div></div>`;}).join('')}</div>`:emptyHint;
+   const uniqS=[...new Set((S.scripts||[]).filter(id=>SCEN[id]))];
+   body=uniqS.length?`<div class="cards-grid">${uniqS.map(id=>{const s=SCRIPTS[id]||SCEN[id];const cnt=(S.scripts||[]).filter(x=>x===id).length;const d=cardLvl(id);return cardU({name:(L==='en'?(s.en||id):(s.ru||id)),emoji:'📜',effHtml:(s.roles||[]).join(' · '),cnt:cnt,lvl:d});}).join('')}</div>`:emptyHint;
  } else if(cat==='production'){
-   const owned=(S.prodOwned||[]).map(studioById).filter(Boolean);
-   body=owned.length?`<div class="cards-grid">${owned.map(s=>`<div class="panel"><div class="set-row__l">🎬 ${L==='en'?s.en:s.ru}</div><div class="tiny muted" style="margin-top:4px">${eff2(s)} · 💰${studioCostAt(s.id)}/${L==='en'?'film':'фильм'}</div></div>`).join('')}</div>`:emptyHint;
+   const uniqP=[...new Set(S.prodOwned||[])].map(id=>({id:id,s:studioById(id)})).filter(x=>x.s);
+   body=uniqP.length?`<div class="cards-grid">${uniqP.map(o=>{const cnt=(S.prodOwned||[]).filter(x=>x===o.id).length;const d=cardLvl(o.id);return cardU({name:(L==='en'?o.s.en:o.s.ru),emoji:'🎬',tier:o.s.tier,effHtml:eff2(o.s),cnt:cnt,lvl:d});}).join('')}</div>`:emptyHint;
  } else if(cat==='directors'){
-   const owned=(S.directorsOwned||[]).map(dirById).filter(Boolean);
-   body=owned.length?`<div class="cards-grid">${owned.map(d=>`<div class="panel"><div class="set-row__l">🎬 ${L==='en'?d.en:d.ru}</div><div class="tiny muted" style="margin-top:4px">${dirEffLabel(d)} · 💰${dirCostAt(d)}/${L==='en'?'film':'фильм'}</div></div>`).join('')}</div>`:emptyHint;
+   const uniqD=[...new Set(S.directorsOwned||[])].map(id=>({id:id,d:dirById(id)})).filter(x=>x.d);
+   body=uniqD.length?`<div class="cards-grid">${uniqD.map(o=>{const cnt=(S.directorsOwned||[]).filter(x=>x===o.id).length;const lv=cardLvl(o.id);return cardU({name:(L==='en'?o.d.en:o.d.ru),emoji:'🎬',tier:o.d.tier,effHtml:dirEffLabel(o.d),cnt:cnt,lvl:lv});}).join('')}</div>`:emptyHint;
  }
  return `<h1 class="h1">${t('collection')}</h1>${seg}${tabs}${body}`;
 };
 SCREENS.shop=function(){
- const seg=`<div class="seg" style="margin-bottom:12px"><button data-tap="go:collection">${t('collection')} (${S.coll.length})</button><button class="on" data-tap="go:shop">${t('shop')}</button></div>`;
- const items=POOL.map(c=>{
-   const price=cardPrice(c);
-   const lk=(c.tier>=2&&!unlocked('tier'+c.tier));
-   return `<div class="pk-shop-item">${cardFull(c,{locked:lk})}
-     <button class="pk-btn ${lk?'pk-btn--ghost':'pk-btn--secondary'} pk-btn--block" style="margin-top:8px" ${lk?'disabled':`data-tap="buy:${c.id}"`}>
-       ${lk?`${svg('lock','sm')} L${(UNLOCKMAP.tiers&&(UNLOCKMAP.tiers[c.tier]||UNLOCKMAP.tiers[String(c.tier)]))||3}`:`💰 ${fmtNum(price)}`}</button></div>`;
- }).join('');
+ const L=SET.lang; const cat=S.shopCat||'actors';
+ const seg=`<div class="seg" style="margin-bottom:12px"><button data-tap="go:collection">${t('collection')}</button><button class="on" data-tap="go:shop">${t('shop')}</button></div>`;
+ const tabs=`<div class="seg" style="margin-bottom:12px">${[['actors',L==='en'?'Actors':'Актёры'],['scenarios',L==='en'?'Scenarios':'Сценарии'],['production',L==='en'?'Production':'Технологии'],['directors',L==='en'?'Directors':'Режиссёры']].map(x=>`<button class="${cat===x[0]?'on':''}" data-tap="shopcat:${x[0]}">${x[1]}</button>`).join('')}</div>`;
  const unl=S.shopUnlocked||[]; const PC=(window.PROKAT_CONTENT||{}); const TECHA=PC.tech||[]; const STUDA=PC.studio||[]; const DIRA=PC.directors||[];
  const techForPerk=function(pid){return TECHA.find(function(t){return t.unlocksPerk===pid;});};
  const nodeForScen=function(sid){return STUDA.find(function(nn){return nn.unlocks&&nn.unlocks.scenarios&&nn.unlocks.scenarios.indexOf(sid)>=0;});};
  const dirNode=STUDA.find(function(nn){return nn.unlocks&&nn.unlocks.directors;});
- const stateBtn=function(owned,unlocked,bp,tap,hint){ if(owned)return `<button class="pk-btn pk-btn--ghost pk-btn--block" style="margin-top:8px" disabled>✓ ${SET.lang==='en'?'owned':'в коллекции'}</button>`; if(unlocked){const af=(S.money||0)>=bp;return `<button class="pk-btn ${af?'pk-btn--secondary':'pk-btn--ghost'} pk-btn--block" style="margin-top:8px" ${af?`data-tap="${tap}"`:'disabled'}>🛒 ${fmtNum(bp)}</button>`;} return `<button class="pk-btn pk-btn--ghost pk-btn--block" style="margin-top:8px" disabled>🔒 ${hint}</button>`; };
- const acq=function(title,arr){return `<div class="sec" style="margin-top:16px">${title}</div><div class="shop-grid">${arr.join('')}</div>`;};
- const prodItems=STUDIO.map(function(s){const tn=techForPerk(s.id);const hint=(SET.lang==='en'?'research ':'изучи ')+(tn?(SET.lang==='en'?tn.en:tn.ru):'tech');return `<div class="pk-shop-item"><div class="set-row__l">🎬 ${SET.lang==='en'?s.en:s.ru}</div><div class="tiny muted">${s.type==='q'?('Q×'+s.mult.toFixed(2)):s.type==='money'?('💰×'+s.mult.toFixed(2)):('🏆×'+s.mult.toFixed(2))}</div>${stateBtn(prodOwn(s.id),unl.indexOf(s.id)>=0,prodBuyPrice(s),'buyprod:'+s.id,hint)}</div>`;});
- const scenItems=Object.keys(SCEN).map(function(id){const s=SCEN[id];const nn=nodeForScen(id);const hint=(SET.lang==='en'?'develop ':'развей ')+(nn?(SET.lang==='en'?nn.en:nn.ru):'studio');return `<div class="pk-shop-item"><div class="set-row__l">📜 ${SET.lang==='en'?s.en:s.ru}</div><div class="tiny muted">${(s.roles||[]).join(' · ')}</div>${stateBtn((S.scripts||[]).indexOf(id)>=0,unl.indexOf(id)>=0,scenBuyPrice(),'buyscen:'+id,hint)}</div>`;});
- const dirItems=DIRA.map(function(d){const hint=(SET.lang==='en'?'develop ':'развей ')+(dirNode?(SET.lang==='en'?dirNode.en:dirNode.ru):'Director Bureau');return `<div class="pk-shop-item"><div class="set-row__l">🎬 ${SET.lang==='en'?d.en:d.ru}</div><div class="tiny muted">${dirEffLabel(d)}</div>${stateBtn((S.directorsOwned||[]).indexOf(d.id)>=0,unl.indexOf(d.id)>=0,dirBuyPrice(d),'buydir:'+d.id,hint)}</div>`;});
- return `<h1 class="h1">${t('shop')}</h1>${seg}<p class="sub">${SET.lang==='en'?'Buy actors. Production / scenarios / directors unlock by research (🔬/🎭), then buy here.':'Покупай актёров. Технологии / сценарии / режиссёры открываются исследованием (🔬/🎭), потом покупаются тут.'}</p><div class="shop-grid">${items}</div>${acq(SET.lang==='en'?'Production':'Технологии',prodItems)}${acq(SET.lang==='en'?'Scenarios':'Сценарии',scenItems)}${acq(SET.lang==='en'?'Directors':'Режиссёры',dirItems)}`;
+ const eff2=function(s){return s.type==='q'?('Q×'+s.mult.toFixed(2)):s.type==='money'?('💰×'+s.mult.toFixed(2)):('🏆×'+s.mult.toFixed(2));};
+ const stateBtn=function(owned,unlk,bp,tap,hint){ if(owned)return `<button class="pk-btn pk-btn--ghost pk-btn--block" style="margin-top:8px" disabled>✓ ${L==='en'?'owned':'в коллекции'}</button>`; if(unlk){const af=(S.money||0)>=bp;return `<button class="pk-btn ${af?'pk-btn--secondary':'pk-btn--ghost'} pk-btn--block" style="margin-top:8px" ${af?`data-tap="${tap}"`:'disabled'}>🛒 ${fmtNum(bp)}</button>`;} return `<button class="pk-btn pk-btn--ghost pk-btn--block" style="margin-top:8px" disabled>🔒 ${hint}</button>`; };
+ let grid='';
+ if(cat==='actors'){ grid=POOL.map(c=>{const price=cardPrice(c);const lk=(c.tier>=2&&!unlocked('tier'+c.tier));return `<div class="pk-shop-item">${cardFull(c,{locked:lk})}<button class="pk-btn ${lk?'pk-btn--ghost':'pk-btn--secondary'} pk-btn--block" style="margin-top:8px" ${lk?'disabled':`data-tap="buy:${c.id}"`}>${lk?`${svg('lock','sm')} L${(UNLOCKMAP.tiers&&(UNLOCKMAP.tiers[c.tier]||UNLOCKMAP.tiers[String(c.tier)]))||3}`:`💰 ${fmtNum(price)}`}</button></div>`;}).join(''); }
+ else if(cat==='production'){ grid=STUDIO.map(function(sp){const tn=techForPerk(sp.id);const hint=(L==='en'?'research ':'изучи ')+(tn?(L==='en'?tn.en:tn.ru):'tech');return `<div class="pk-shop-item">${cardU({name:(L==='en'?sp.en:sp.ru),emoji:'🎬',tier:sp.tier,effHtml:eff2(sp)})}${stateBtn(prodOwn(sp.id),unl.indexOf(sp.id)>=0,prodBuyPrice(sp),'buyprod:'+sp.id,hint)}</div>`;}).join(''); }
+ else if(cat==='scenarios'){ grid=Object.keys(SCEN).map(function(id){const sc=SCEN[id];const nn=nodeForScen(id);const hint=(L==='en'?'develop ':'развей ')+(nn?(L==='en'?nn.en:nn.ru):'studio');const roles=(SCRIPTS[id]&&SCRIPTS[id].roles||[]).join(' · ');return `<div class="pk-shop-item">${cardU({name:(L==='en'?sc.en:sc.ru),emoji:'📜',effHtml:roles})}${stateBtn((S.scripts||[]).indexOf(id)>=0,unl.indexOf(id)>=0,scenBuyPrice(),'buyscen:'+id,hint)}</div>`;}).join(''); }
+ else if(cat==='directors'){ grid=DIRA.map(function(d){const hint=(L==='en'?'develop ':'развей ')+(dirNode?(L==='en'?dirNode.en:dirNode.ru):'Director Bureau');return `<div class="pk-shop-item">${cardU({name:(L==='en'?d.en:d.ru),emoji:'🎬',tier:d.tier,effHtml:dirEffLabel(d)})}${stateBtn((S.directorsOwned||[]).indexOf(d.id)>=0,unl.indexOf(d.id)>=0,dirBuyPrice(d),'buydir:'+d.id,hint)}</div>`;}).join(''); }
+ return `<h1 class="h1">${t('shop')}</h1>${seg}${tabs}<div class="shop-grid">${grid}</div>`;
 };
 
 SCREENS.codex=function(){
@@ -1506,7 +1539,7 @@ function openPicker(idx){if(!S.film||!S.film.slots[idx])return;const slot=S.film
  S.film.slots.forEach((s,i)=>{if(i!==idx&&s.card)counts[s.card]=(counts[s.card]||0)-1;});
  const elig=[...new Set(S.coll)].map(id=>byId(id)).filter(c=>c&&(slot.role?c.role===slot.role:true)&&counts[c.id]>0);
  const body=elig.length?`<div class="cand-grid">`+elig.map(b=>{const c=eff(b.id);const en=curEnergy(b.id);const dis=en<=0;
-   return `<button class="pk-candidate${dis?' is-disabled':''}" data-tap="${dis?`rest:${idx}:${b.id}`:`choose:${idx}:${b.id}`}">${cardMini(c)}<div class="pk-candidate__foot"><span class="tiny muted">${Math.round(c.act+c.cha+c.dra+c.com)}⍟ · 💰${c.bud}</span><span class="tiny" style="color:${dis?'var(--pk-color-warn)':'var(--pk-color-ink-muted)'}">${dis?'⚡0 · ⭐1 '+t('rest'):'⚡'.repeat(en)}</span></div></button>`;}).join('')+`</div>`
+   return `<button class="pk-candidate${dis?' is-disabled':''}" data-tap="${dis?(_cdOn?`cdreset:${idx}:${b.id}`:`rest:${idx}:${b.id}`):`choose:${idx}:${b.id}`}">${cardMini(c)}<div class="pk-candidate__foot"><span class="tiny muted">${Math.round(c.act+c.cha+c.dra+c.com)}⍟ · 💰${c.bud}</span><span class="tiny" style="color:${dis?'var(--pk-color-warn)':'var(--pk-color-ink-muted)'}">${dis?(_cdOn?'⏳'+fmtTime(Math.ceil(_cdL/1000))+' · ⭐'+((CFG.cardCd&&CFG.cardCd.resetStars)||1):'⚡0 · ⭐1 '+t('rest')):(_cdOn?'✓':'⚡'.repeat(en))}</span></div></button>`;}).join('')+`</div>`
    :`<p class="sub" style="padding:14px 0">${t('noCards')}.</p><button class="pk-btn pk-btn--secondary pk-btn--block" data-tap="closeSheet">${SET.lang==='en'?'Go to Contracts':'В магазин'}</button>`;
  $('#sheet').innerHTML=`<div class="pk-sheet__grip"></div><div class="pk-sheet__head"><div class="pk-sheet__title">${t('pickCard')} · ${slot.role}</div><div class="pk-sheet__sub">${t('sole')}</div></div><div class="pk-sheet__body">${body}</div>`;
  openOverlay('#sheet');}
@@ -1514,7 +1547,7 @@ function openSlotPicker(cat,idx){ if(!S.film)return; const L=SET.lang; let title
  if(cat==='actor'){ const slot=S.film.slots[idx]; if(!slot)return; title=slot.role||(L==='en'?'Cast':'Каст');
    const counts={};S.coll.forEach(id=>counts[id]=(counts[id]||0)+1);S.film.slots.forEach((s,i)=>{if(i!==idx&&s.card)counts[s.card]=(counts[s.card]||0)-1;});
    const elig=[...new Set(S.coll)].map(id=>byId(id)).filter(c=>c&&(slot.role?c.role===slot.role:true)&&counts[c.id]>0);
-   cards=elig.map(function(b){const c=eff(b.id);const en=curEnergy(b.id);const dis=en<=0;return `<button class="pk-candidate${dis?' is-disabled':''}" data-tap="${dis?`rest:${idx}:${b.id}`:`choose:${idx}:${b.id}`}">${cardMini(c)}<div class="pk-candidate__foot"><span class="tiny muted">${Math.round(c.act+c.cha+c.dra+c.com)}⍟ · 💰${c.bud}</span><span class="tiny" style="color:${dis?'var(--pk-color-warn)':'var(--pk-color-ink-muted)'}">${dis?'⚡0 · ⭐1 '+t('rest'):'⚡'.repeat(en)}</span></div></button>`;});
+   cards=elig.map(function(b){const c=eff(b.id);var _cdOn=FLAGS.cardCooldown;var _cdL=(_cdOn&&S.cardCd&&S.cardCd[b.id])?Math.max(0,S.cardCd[b.id]-Date.now()):0;const en=_cdOn?0:curEnergy(b.id);const dis=_cdOn?(_cdL>0):(en<=0);return `<button class="pk-candidate${dis?' is-disabled':''}" data-tap="${dis?`rest:${idx}:${b.id}`:`choose:${idx}:${b.id}`}">${cardMini(c)}<div class="pk-candidate__foot"><span class="tiny muted">${Math.round(c.act+c.cha+c.dra+c.com)}⍟ · 💰${c.bud}</span><span class="tiny" style="color:${dis?'var(--pk-color-warn)':'var(--pk-color-ink-muted)'}">${dis?'⚡0 · ⭐1 '+t('rest'):'⚡'.repeat(en)}</span></div></button>`;});
  } else if(cat==='scenario'){ const F=FORMATS[S.film.fmt];const n=F.slots.length; title=L==='en'?'Scenario':'Сценарий';
    const owned=(S.scripts||[]).filter(function(id){return SCEN[id]&&SCRIPTS[id]&&SCRIPTS[id].size===n;});
    cards=[`<button class="pk-candidate" data-tap="scriptset:free"><div style="padding:10px"><div class="set-row__l">🎲 ${L==='en'?'Free':'Свободно'}</div><div class="tiny muted">${L==='en'?'any roles · hidden combos':'любые роли · скрытые комбо'}</div></div></button>`].concat(owned.map(function(id){const s=SCRIPTS[id];const on=S.film.script===id;return `<button class="pk-candidate${on?' is-selected':''}" data-tap="scriptset:${id}"><div style="padding:10px"><div class="set-row__l">📜 ${L==='en'?s.en:s.ru} ${on?'✓':''}</div><div class="tiny muted">${(s.roles||[]).join(' · ')}</div></div></button>`;}));
@@ -1539,7 +1572,7 @@ function resolvePremiere(chanId){const ch=CHANNELS.find(c=>c.id===chanId);
  if(!flop){money=Math.round(sc.Q*ch.m*SET.op.payoutMult*_sm.moneyMul*_wm*_mM);rep=Math.round(sc.Q*ch.a*SET.op.acclaimMult*(sc.perkRepMul||1)*_sm.repMul*_wm*_rM);S.money+=money-_sm.cost;earnRep(rep);}
  else{lost=Math.min(stake,spendable());loseRep(stake);}
  let dailyB=null;if(SET.op.dailyEnabled&&!dailyDone()&&!flop){const dl=todaysDaily();if(dl.e.match(dl.v,cards,S.film,sc)){const b=dl.e.bonus({rep,money});if(b.rep)earnRep(b.rep);if(b.money)S.money+=b.money;S.dailyDone=dailyKey();dailyB={rep:b.rep||0,money:b.money||0};}}
- if(level()>=2)used.forEach(s=>useEnergy(s.card));let cardUps=0;const xpg=Math.max(3,Math.round(sc.Q/35));used.forEach(s=>{cardUps+=grantCardXp(s.card,xpg);});S.premieres++;
+ if(!FLAGS.cardCooldown&&level()>=2)used.forEach(s=>useEnergy(s.card));let cardUps=0;if(FLAGS.cardCooldown){if(!S.cardCd)S.cardCd={};var _cc=CFG.cardCd||{};used.forEach(function(s){S.cardCd[s.card]=Date.now()+Math.round((( _cc.baseSec||80)+(_cc.perLevelSec||40)*cardLvl(s.card))*1000*SET.op.cooldownMult*(S.patron?0.5:1));});}else{const xpg=Math.max(3,Math.round(sc.Q/35));used.forEach(s=>{cardUps+=grantCardXp(s.card,xpg);});}S.premieres++;
  S.cd[S.film.fmt]=Date.now()+Math.round(FORMATS[S.film.fmt].cd*1000*SET.op.cooldownMult);
  if(!S.tropesSeen)S.tropesSeen=[];const _newTr=[];if(!flop)_trp.forEach(t=>{if(S.tropesSeen.indexOf(t.id)<0){S.tropesSeen.push(t.id);_newTr.push(t);}});if(_newTr.length)earnRep(_newTr.length*15);S.lastResult={Q:sc.Q,channelName:ch[SET.lang]||ch.ru,pat:sc.pat[SET.lang==='en'?'en':'ru'],money,rep,lost,flop,win:!flop,pvp:!!ch.pvp,oppQ,cardUps,daily:dailyB,studioCost:(!flop?_sm.cost:0),qExp:_Qexp,tomato:_rcp?_rcp.tomato:null,boxMult:_rcp?_rcp.moneyMult:1,recBand:_rcp?_rcp.band:0,worldMult:_wm,tropes:_trp.map(tropeName),newTropes:_newTr.map(tropeName)};
  const nl=level();if(nl>oldL)S.pendingLevel=[oldL,nl];if(typeof ensureUnlocks==='function')ensureUnlocks();if(!flop&&Math.random()<0.25){if(!S.boosterInv)S.boosterInv={};const _b=Object.keys(BOOSTERS)[Math.floor(Math.random()*Object.keys(BOOSTERS).length)];S.boosterInv[_b]=(S.boosterInv[_b]||0)+1;}
@@ -1676,7 +1709,7 @@ SCREENS.membership=function(){
  const patron=!!S.patron,ek=ekadashiLeft();
  return `<button class="pk-btn pk-btn--ghost" data-tap="go:home">← ${t('home')}</button>
  <h1 class="h1" style="margin-top:8px">${SET.lang==='en'?'Membership':'Членство'}</h1>
- <div class="panel"><div class="row spread"><div><div class="set-row__l">${SET.lang==='en'?'Patron':'Патрон'}</div><div class="set-row__h">${SET.lang==='en'?'Weekly stipend · faster energy · badge':'Еженедельный стипенд · быстрее энергия · значок'}</div></div>${patron?'<span class="pk-badge pk-badge--success">ON</span>':''}</div>
+ <div class="panel"><div class="row spread"><div><div class="set-row__l">${SET.lang==='en'?'Patron':'Патрон'}</div><div class="set-row__h">${SET.lang==='en'?'Cooldowns −50% · energy ×2 · +💰600 +⭐2 weekly':'Кулдауны −50% · энергия ×2 · +💰600 +⭐2 в неделю'}</div></div>${patron?'<span class="pk-badge pk-badge--success">ON</span>':''}</div>
    ${patron?`<button class="pk-btn pk-btn--primary pk-btn--block" style="margin-top:10px" ${stipendReady()?'data-tap="sub:claim"':'disabled'}>${stipendReady()?(SET.lang==='en'?'Claim weekly stipend (+💰600 +⭐2)':'Забрать стипенд (+💰600 +⭐2)'):(SET.lang==='en'?'Stipend in ':'Стипенд через ')+fmtTime(Math.ceil(stipendLeft()/1000))}</button>`
      :`<button class="pk-btn pk-btn--primary pk-btn--block" style="margin-top:10px" data-tap="sub:start">${SET.lang==='en'?'Start patron (demo)':'Стать патроном (демо)'}</button>`}</div>
  <div class="sec">${SET.lang==='en'?'Ekadashi gift':'Подарок Экадаши'}</div>
@@ -1732,7 +1765,7 @@ SCREENS.festival=function(){
 function featuresHomeHTML(){const b=[];
  if(SET.op.packsEnabled)b.push(['packs','🎁',SET.lang==='en'?'Packs':'Паки']);
  if(SET.op.subEnabled)b.push(['membership','⭐',SET.lang==='en'?'Membership':'Членство']);
- if(SET.op.birzhaEnabled)b.push(['market','🔁',SET.lang==='en'?'Barter':'Биржа']);
+ if((typeof FLAGS!=='undefined'&&FLAGS.mergeEnabled)||SET.op.birzhaEnabled)b.push(['market','🧬',SET.lang==='en'?'Merge':'Скрещивание']);
  if(SET.op.festivalEnabled)b.push(['festival','🏆',SET.lang==='en'?'Festival':'Фестиваль']);
  if(!b.length)return '';
  return `<div class="sec">${SET.lang==='en'?'Market & events':'Маркет и события'}</div><div class="fmt-grid">`+b.map(x=>`<div class="fmt" data-tap="go:${x[0]}"><div style="font-size:20px">${x[1]}</div><div class="fmt__name" style="font-size:11px">${x[2]}</div></div>`).join('')+`</div>`;}
@@ -1825,7 +1858,7 @@ function mcSimulate(N,maxT){
     const Q=score(S.film.slots.map(s=>eff(s.card))).Q;const open=F.channels.filter(chOpen).map(id=>CHANNELS.find(c=>c.id===id));
     const ch=open.filter(c=>Q>=channelTh(c)).sort((a,b)=>b.a-a.a)[0]||open.sort((a,b)=>channelTh(a)-channelTh(b))[0];if(!ch){dead++;continue;}
     resolvePremiere(ch.id);S._made[F.id]=true;S.film=null;
-    if(S.money>450){S.coll.push(POOL[Math.floor(Math.random()*POOL.length)].id);S.money-=300;}
+    if(S.money>450){S.coll.push(POOL[Math.floor(Math.random()*POOL.length)].id);S.money-=300;}if(typeof window!=='undefined'&&window.__gacha){try{window.__gacha.open('daily');if(S.money>1200)window.__gacha.open('basic');window.__gacha.mergeAll();}catch(e){}}
     if(t%12===0&&chOpen('festival')){try{enterFestival();closeOverlay();}catch(e){}}
     const a={L30:level()>=30,combos:(S.discovered||[]).length>=COMBO_CAT.length,cardMax:fresh().some(id=>cardLvl(id)>=CFG.maxDev),allFormats:Object.keys(FORMATS).every(k=>S._made[k]),allScripts:Object.keys(SCRIPTS).every(k=>(S.scripts||[]).includes(k))};
     for(const k in a)if(a[k]&&!(k in first))first[k]=t;
@@ -1890,6 +1923,77 @@ function opBalance(){const r=window._mcLast;
 try{if(!load())newGame();applyTheme();paint();}catch(__e){if(window.onerror)window.onerror('init: '+__e.message,'',0,0,__e);}
 function updateLabTimers(){const k=S.labTab||'tech';const el=$('#labEta');if(el&&_treeActive(k)){el.textContent='⏳ '+_fmtDur(nodeRemainMs(k));}}
 setInterval(()=>{const _ch=tickTrees();if(S.screen==='lab'){if(_ch){const sc=$('#screen').scrollTop;paint();$('#screen').scrollTop=sc;}else{updateLabTimers();}return;}if((S.screen==='build'||S.screen==='home')&&Object.keys(S.cd).some(f=>cdLeft(f)>0)){const sc=$('#screen').scrollTop;paint();$('#screen').scrollTop=sc;}},1000);
+
+/* GACHA_MVP_BLOCK — full gacha (all card types) + merge + godmode (behind flags) */
+;(function(){try{
+var CT=(window.PROKAT_CONTENT)||{};var CARDPACKS=CT.cardPacks||[];if(!CARDPACKS.length)return;var DIRS=CT.directors||[];
+var DAILYPACK_MS=90000;
+function dailyPackReady(){return (typeof window!=='undefined'&&window._simMode)||(((S&&S.lastDailyPack)||0)+DAILYPACK_MS<=Date.now());}
+function rollTier(odds){var r=Math.random(),acc=0,o;odds=odds||[[1,1]];for(var i=0;i<odds.length;i++){o=odds[i];acc+=o[1];if(r<=acc)return o[0];}return odds[odds.length-1][0];}
+function mergeNeed(lvl){var a=(CFG.merge&&CFG.merge.dupsPerLevel)||[2,2,3,3,4];return a[Math.min(lvl,a.length-1)];}
+function nameOf(id){var c=byId(id);if(c&&c.name)return c.name;var d=DIRS.filter(function(x){return x.id===id;})[0];if(d)return (SET.lang==='en'?d.en:d.ru);if(SCEN[id])return (SET.lang==='en'?(SCEN[id].en||id):(SCEN[id].ru||id));if(typeof studioById==='function'){var _sp=studioById(id);if(_sp)return (SET.lang==='en'?_sp.en:_sp.ru);}return id;}
+function idKind(id){if(POOL.some(function(c){return c.id===id;}))return 'actor';if(DIRS.some(function(d){return d.id===id;}))return 'director';if(SCEN[id])return 'scenario';if(typeof STUDIO!=='undefined'&&STUDIO.some(function(s){return s.id===id;}))return 'production';return null;}
+function ownerArr(id){var k=idKind(id);if(k==='actor')return S.coll;if(k==='director'){if(!S.directorsOwned)S.directorsOwned=[];return S.directorsOwned;}if(k==='scenario'){if(!S.scripts)S.scripts=[];return S.scripts;}if(k==='production'){if(!S.prodOwned)S.prodOwned=[];return S.prodOwned;}return null;}
+function drawOne(pk){var kind=pk.kind||'actor';if(kind==='any')kind=['actor','director','scenario','tech'][Math.floor(Math.random()*4)];
+ if(kind==='actor'){var cands=POOL.filter(function(c){return c&&c.role;});if(pk.genre)cands=cands.filter(function(c){return c.genre===pk.genre;});if(!cands.length)cands=POOL.slice();var tier=rollTier(pk.odds&&pk.odds.length?pk.odds:[[1,0.5],[2,0.3],[3,0.2]]);var pool=cands.filter(function(c){return c.tier===tier;});if(!pool.length)pool=cands;return {kind:'actor',id:pool[Math.floor(Math.random()*pool.length)].id};}
+ if(kind==='director'){if(!DIRS.length)return null;return {kind:'director',id:DIRS[Math.floor(Math.random()*DIRS.length)].id};}
+ if(kind==='scenario'){var ks=Object.keys(SCEN);if(!ks.length)return null;return {kind:'scenario',id:ks[Math.floor(Math.random()*ks.length)]};}
+ if(kind==='tech'){var SP=(typeof STUDIO!=='undefined'&&STUDIO.length)?STUDIO:(CT.studioPerks||[]);if(!SP.length)return null;return {kind:'tech',id:SP[Math.floor(Math.random()*SP.length)].id};}
+ return null;}
+function applyDrop(g){if(!g)return false;if(g.kind==='actor'){S.coll.push(g.id);return true;}
+ if(g.kind==='director'){if(!S.directorsOwned)S.directorsOwned=[];S.directorsOwned.push(g.id);return true;}
+ if(g.kind==='scenario'){if(!S.scripts)S.scripts=[];S.scripts.push(g.id);return true;}
+ if(g.kind==='tech'){if(!S.prodOwned)S.prodOwned=[];S.prodOwned.push(g.id);return true;}
+ return false;}
+function doOpenPack(id){var pk=null,i;for(i=0;i<CARDPACKS.length;i++)if(CARDPACKS[i].id===id)pk=CARDPACKS[i];if(!pk||!S)return;var cc=pk.cost||{};
+ if(cc.free){if(!dailyPackReady()){toast(SET.lang==='en'?'Daily box not ready':'Дневной бокс не готов');return;}S.lastDailyPack=Date.now();}
+ else if(cc.money!=null){if((S.money||0)<cc.money){toast(SET.lang==='en'?'Not enough money':'Мало денег');return;}S.money-=cc.money;}
+ else if(cc.stars!=null){if((S.stars||0)<cc.stars){toast(SET.lang==='en'?'No Stars — Patron gives ⭐ weekly':'Нет ⭐ · Патрон даёт ⭐ еженедельно');return;}S.stars-=cc.stars;}
+ var got=[],j;for(j=0;j<(pk.n||1);j++){var g=drawOne(pk);if(g&&applyDrop(g))got.push(g);}
+ var names=got.map(function(g){return nameOf(g.id);}).join(' · ')||'—';
+ showSplash({icon:pk.icon||'sparkles',eyebrow:(SET.lang==='en'?pk.en:pk.ru),title:'+'+got.length+(SET.lang==='en'?' cards':' карт'),sub:names});
+ if(typeof beep==='function')beep(600);save();paint();}
+function doMerge(id){if(!S)return;var arr=ownerArr(id);if(!arr){toast('—');return;}var copies=arr.filter(function(x){return x===id;}).length;var d=cardLvl(id);if(d>=CFG.maxDev||d>=repCeiling()){toast(SET.lang==='en'?'Max level':'Макс. уровень');return;}var need=mergeNeed(d);if(copies-1<need){toast((SET.lang==='en'?'Need more: ':'Нужно ещё: ')+(need-(copies-1)));return;}for(var i=0;i<need;i++){var ix=arr.indexOf(id);if(ix>=0)arr.splice(ix,1);}var into=((S.cardXp&&S.cardXp[id])||0)-cumXp(d);var req=xpReqFor(d);grantCardXp(id,Math.max(1,req-into));showSplash({icon:'star',eyebrow:(SET.lang==='en'?'Merge':'Скрещивание'),title:nameOf(id)+' → '+(SET.lang==='en'?'Lv ':'ур.')+cardLvl(id),sub:'−'+need});if(typeof beep==='function')beep(620);save();paint();}
+function gmAdd(type){if(!S)return;if(type==='money')S.money=(S.money||0)+10000;else if(type==='stars')S.stars=(S.stars||0)+25;else if(type==='lvl'){S.lvl=Math.min(30,(S.lvl||1)+3);S.rep=(S.rep||0)+30000;}else if(type==='dups'){var owned=(S.coll||[]).slice();for(var i=0;i<6;i++){var pick=owned.length?owned[Math.floor(Math.random()*owned.length)]:(POOL[0]&&POOL[0].id);if(pick)S.coll.push(pick);}}toast('🧪 +'+type);save();paint();}
+SCREENS.packs=function(){
+ var gm='<div class="panel" style="border:1px dashed var(--pk-color-accent,#6c7bff);margin-bottom:10px"><div class="set-row__l">🧪 '+(SET.lang==='en'?'TEST (godmode)':'ТЕСТ (godmode)')+'</div><div class="row" style="margin-top:6px;gap:6px"><button class="pk-btn pk-btn--ghost" style="flex:1;font-size:11px" data-tap="gm:money">+💰10k</button><button class="pk-btn pk-btn--ghost" style="flex:1;font-size:11px" data-tap="gm:stars">+⭐25</button><button class="pk-btn pk-btn--ghost" style="flex:1;font-size:11px" data-tap="gm:dups">+'+(SET.lang==='en'?'dups':'дубли')+'</button><button class="pk-btn pk-btn--ghost" style="flex:1;font-size:11px" data-tap="gm:lvl">+'+(SET.lang==='en'?'lvl':'ур.')+'</button></div></div>';
+ var cp=(CARDPACKS||[]).map(function(pk){var cc=pk.cost||{};
+   var price=cc.free?(dailyPackReady()?(SET.lang==='en'?'FREE':'БЕСПЛ.'):(SET.lang==='en'?'soon':'скоро')):(cc.money!=null?('💰'+fmtNum(cc.money)):('⭐'+cc.stars));
+   var oddsStr=(pk.odds&&pk.odds.length)?pk.odds.map(function(o){return 'T'+o[0]+' '+Math.round(o[1]*100)+'%';}).join(' · '):(SET.lang==='en'?'random in category':'случайно из категории');
+   var kl={actor:(SET.lang==='en'?'actors':'актёры'),director:(SET.lang==='en'?'directors':'режиссёры'),scenario:(SET.lang==='en'?'writers':'сценарии'),tech:(SET.lang==='en'?'tech':'технологии'),any:(SET.lang==='en'?'any':'любые')}[pk.kind||'actor'];
+   var dis=cc.free&&!dailyPackReady();
+   return '<div class="panel" style="margin-bottom:10px"><div class="row spread"><div><div class="set-row__l">'+svg(pk.icon||'sparkles','sm')+' '+(SET.lang==='en'?pk.en:pk.ru)+' <span class="tiny muted">· '+kl+'</span></div><div class="tiny muted">'+((SET.lang==='en'?(pk.desc&&pk.desc.en):(pk.desc&&pk.desc.ru))||'')+'</div><div class="tiny muted" style="margin-top:3px">'+(SET.lang==='en'?'Odds':'Шансы')+': '+oddsStr+'</div></div><button class="pk-btn '+(cc.stars!=null?'pk-btn--secondary':'pk-btn--primary')+'" style="min-width:92px" '+(dis?'disabled':'')+' data-tap="cardpack:'+pk.id+'">'+price+'</button></div></div>';}).join('');
+ var odds=PACK_ODDS.map(function(x){return '<div class="set-row"><div class="set-row__l">'+x[0]+'</div><div>'+Math.round(x[1]*100)+'%</div></div>';}).join('');
+ var owned=(S.cosmetics||[]);
+ return '<button class="pk-btn pk-btn--ghost" data-tap="go:home">← '+t('home')+'</button>'+
+ '<h1 class="h1" style="margin-top:8px">'+(SET.lang==='en'?'Boxes':'Боксы')+'</h1>'+
+ '<p class="sub">'+(SET.lang==='en'?'Open boxes for random cards of all kinds. Odds shown. Merge duplicates to level up. In-app purchases, random items.':'Открывай боксы — случайные карты всех типов. Шансы открыты. Скрещивай дубли — растёт уровень.')+'</p>'+gm+
+ '<div class="sec" style="margin-top:0">'+(SET.lang==='en'?'Card boxes':'Боксы карт')+'</div>'+cp+
+ '<div class="sec">'+(SET.lang==='en'?'Cosmetic boxes':'Косметика')+'</div>'+
+ '<div class="panel">'+odds+'<button class="pk-btn pk-btn--primary pk-btn--block" style="margin-top:12px" data-tap="openpack:money">💰 '+fmtNum(PACK_PRICE_MONEY)+'</button>'+
+   '<button class="pk-btn pk-btn--secondary pk-btn--block" style="margin-top:8px" data-tap="openpack:stars">⭐ '+PACK_PRICE_STARS+'</button></div>'+
+ '<div class="sec">'+(SET.lang==='en'?'Owned':'Открыто')+' ('+owned.length+'/'+COSMETICS.length+')</div>'+
+ '<div class="cards-grid">'+COSMETICS.map(function(c){var own=owned.includes(c.id);var eq=S.equip&&S.equip[c.type]===c.id;
+   return '<div class="panel" style="text-align:center;'+(own?'':'opacity:.4')+'"><div style="font-size:26px">'+c.emoji+'</div><div class="small" style="font-weight:600">'+c.name+'</div><div class="tiny muted">'+c.rarity+'</div>'+(own?'<button class="pk-btn '+(eq?'pk-btn--primary':'pk-btn--ghost')+' pk-btn--block" style="margin-top:6px;font-size:11px" data-tap="equip:'+c.id+'">'+(eq?'✓':(SET.lang==='en'?'Equip':'Надеть'))+'</button>':'')+'</div>';}).join('')+'</div>';
+};
+SCREENS.market=function(){
+ var groups=[],seen={};
+ function addArr(arr){if(!arr)return;Array.from(new Set(arr)).forEach(function(id){var n=arr.filter(function(x){return x===id;}).length;if(n>1&&!seen[id]){seen[id]=1;groups.push({id:id,n:n});}});}
+ addArr(S.coll);addArr(S.directorsOwned);addArr(S.scripts);addArr(S.prodOwned);
+ var body=groups.length?groups.map(function(o){var d=cardLvl(o.id);var need=mergeNeed(d);var canMerge=d<CFG.maxDev&&d<repCeiling()&&(o.n-1)>=need;var a=byId(o.id);
+   return '<div class="panel" style="margin-bottom:8px"><div class="set-row__l">'+nameOf(o.id)+' <span class="tiny muted">×'+o.n+' · '+(SET.lang==='en'?'Lv':'ур.')+d+'</span></div>'+
+   '<div class="row" style="margin-top:8px"><button class="pk-btn '+(canMerge?'pk-btn--primary':'pk-btn--ghost')+'" style="flex:1" '+(canMerge?'':'disabled')+' data-tap="merge:'+o.id+'">'+svg('star','sm')+' '+(canMerge?((SET.lang==='en'?'Merge −':'Скрестить −')+need):((SET.lang==='en'?'need +':'ещё +')+((need+1)-o.n)))+'</button>'+
+   (a?'<button class="pk-btn pk-btn--ghost" style="flex:1" data-tap="market:sell:'+o.id+'">'+(SET.lang==='en'?'Sell':'Продать')+' 💰'+Math.round(PRICE[a.tier]*0.5*SET.op.priceMult)+'</button>':'')+'</div></div>';}).join('')
+   :'<p class="sub">'+(SET.lang==='en'?'No duplicates yet — open boxes. Duplicates merge to level up.':'Пока нет дублей — открывай боксы. Дубли скрещивай — растёт уровень.')+'</p>';
+ return '<button class="pk-btn pk-btn--ghost" data-tap="go:home">← '+t('home')+'</button>'+
+ '<h1 class="h1" style="margin-top:8px">'+(SET.lang==='en'?'Merge':'Скрещивание')+'</h1>'+
+ '<p class="sub">'+(SET.lang==='en'?'Merge duplicate cards of any kind to raise their level.':'Скрещивай одинаковые карты любого типа — растёт уровень.')+'</p>'+body;
+};
+document.addEventListener('click',function(e){var el=e.target&&e.target.closest?e.target.closest('[data-tap]'):null;if(!el)return;var d=el.getAttribute('data-tap')||'';if(d.indexOf('cardpack:')===0){e.preventDefault();doOpenPack(d.split(':')[1]);}else if(d.indexOf('merge:')===0){e.preventDefault();doMerge(d.split(':')[1]);}else if(d.indexOf('gm:')===0){e.preventDefault();gmAdd(d.split(':')[1]);}else if(d.indexOf('shopcat:')===0){e.preventDefault();S.shopCat=d.split(':')[1];if(typeof paint==='function')paint();}else if(d.indexOf('cdreset:')===0){e.preventDefault();var _pp=d.split(':');var _cid=_pp[_pp.length-1];var _cidx=_pp.length>2?_pp[1]:null;var _rs=(CFG.cardCd&&CFG.cardCd.resetStars)||1;if((S.stars||0)>=_rs){S.stars-=_rs;if(S.cardCd)delete S.cardCd[_cid];toast(SET.lang==='en'?'Cooldown reset':'Кулдаун сброшен');save();if(_cidx!=null&&typeof openSlotPicker==='function')openSlotPicker('actor',+_cidx);else paint();}else toast(SET.lang==='en'?'No Stars':'Нет звёзд');}},true);
+function mergeAllSim(){if(!S||!S.coll)return;var cnt={};S.coll.forEach(function(x){cnt[x]=(cnt[x]||0)+1;});Object.keys(cnt).forEach(function(id){if(idKind(id)!=='actor')return;var d=cardLvl(id),need=mergeNeed(d);while(d<CFG.maxDev&&d<repCeiling()&&(cnt[id]-1)>=need){cnt[id]-=need;var into=((S.cardXp&&S.cardXp[id])||0)-cumXp(d);grantCardXp(id,Math.max(1,xpReqFor(d)-into));d=cardLvl(id);need=mergeNeed(d);}});var nc=[];Object.keys(cnt).forEach(function(id){for(var i=0;i<cnt[id];i++)nc.push(id);});S.coll=nc;}
+if(typeof window!=='undefined'){window.__gacha={open:doOpenPack,mergeAll:mergeAllSim};}
+}catch(err){console.warn('gacha init failed',err);}})();
+
 </script>
 </body>
 </html>
