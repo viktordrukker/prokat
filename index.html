@@ -830,7 +830,7 @@ const I18N={
 const t=k=>(I18N[SET.lang]&&I18N[SET.lang][k])||I18N.ru[k]||k;
 
 /* ---------------- config (overridable by content/content.js) ---------------- */
-const BUILD_STAMP='2026-07-01 08:45 · gacha+cooldown+shop-cats';
+const BUILD_STAMP='2026-07-01 08:53 · flags-from-content (packs/sub fix)';
 let CFG={levelBase:120,levelPow:1.40,maxDev:5,realize:[0.60,0.68,0.76,0.84,0.92,1.00],xpBase:6,xpStep:7,intensiveRep:60,devFrac:[0.72,0.81,0.90,1.00],devCost:[0,45,100,180],
  startMoney:320,startStars:5,energyMax:6,energyRegenSec:75,freshBonus:0.05,
  payoutMult:1,repGainMult:1,priceMult:1,thresholdMult:1,cooldownMult:.25,curveMult:1,repCostMult:1,flopPenaltyMult:1};
@@ -1088,7 +1088,7 @@ const SAVE_KEY='prokat_proto_v2';
 function newGame(){S={money:SET.op.startMoney,rep:0,lvl:1,stars:CFG.startStars,coll:STARTER.slice(),scripts:['crime','romance'],boosterInv:{cgi:3,sound:3,mkt:2,edit:2},prodOwned:[],cardXp:{},dev:{},energy:{},cd:{},seen:{},research:{done:[],active:null},studioDev:{done:[],active:null},
  film:null,screen:'home',tab:'home',premieres:0};save();}
 function save(){try{localStorage.setItem(SAVE_KEY,JSON.stringify({v:1,S,SET}));}catch(e){}}
-function load(){try{const d=JSON.parse(localStorage.getItem(SAVE_KEY));if(d&&d.S){S=d.S;SET=Object.assign(DEF_SET(),d.SET||{});SET.op=Object.assign(DEF_SET().op,(d.SET&&d.SET.op)||{});return true;}}catch(e){}return false;}
+function load(){try{const d=JSON.parse(localStorage.getItem(SAVE_KEY));if(d&&d.S){S=d.S;SET=Object.assign(DEF_SET(),d.SET||{});SET.op=Object.assign(DEF_SET().op,(d.SET&&d.SET.op)||{});try{['packsEnabled','subEnabled','festivalEnabled','pvpEnabled','birzhaEnabled','dailyEnabled'].forEach(function(k){if(FLAGS&&FLAGS[k]!=null)SET.op[k]=FLAGS[k];});}catch(_e){}return true;}}catch(e){}return false;}
 const level=()=>S.lvl||1;
 const repFloorVal=()=>cumReq(level());
 const spendable=()=>Math.max(0,S.rep-repFloorVal());
