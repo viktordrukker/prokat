@@ -830,6 +830,7 @@ const I18N={
 const t=k=>(I18N[SET.lang]&&I18N[SET.lang][k])||I18N.ru[k]||k;
 
 /* ---------------- config (overridable by content/content.js) ---------------- */
+const BUILD_STAMP='2026-07-01 08:45 · gacha+cooldown+shop-cats';
 let CFG={levelBase:120,levelPow:1.40,maxDev:5,realize:[0.60,0.68,0.76,0.84,0.92,1.00],xpBase:6,xpStep:7,intensiveRep:60,devFrac:[0.72,0.81,0.90,1.00],devCost:[0,45,100,180],
  startMoney:320,startStars:5,energyMax:6,energyRegenSec:75,freshBonus:0.05,
  payoutMult:1,repGainMult:1,priceMult:1,thresholdMult:1,cooldownMult:.25,curveMult:1,repCostMult:1,flopPenaltyMult:1};
@@ -1481,7 +1482,7 @@ const OPHELP={
  flopPenaltyMult:{t:'Штраф за флоп',b:'Множитель потери репутации при амбициозном провале. 0 — без штрафа, выше — больнее риск.'}};
 SCREENS.settings=function(){
  const tab=S.setTab||'player';
- return `<h1 class="h1">${t('settings')}</h1>
+ return `<h1 class="h1">${t('settings')}</h1><div class="tiny muted" style="margin:-6px 0 12px">build ${BUILD_STAMP}</div>
  <div class="seg" style="margin-bottom:14px">
    <button class="${tab==='player'?'on':''}" data-tap="settab:player">${t('player')}</button>
    <button class="${tab==='operator'?'on':''}" data-tap="settab:operator">${t('operator')}</button></div>
